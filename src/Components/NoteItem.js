@@ -26,6 +26,9 @@ export class NoteItem extends Component {
           <button onClick={this.props.delNote.bind(this, id)} style={btnStyle}>
             Delete
           </button>
+          {this.props.note.ID}
+          {"  "}
+          {this.props.note.Title}
         </p>
       </div>
     );

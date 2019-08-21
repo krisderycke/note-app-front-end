@@ -1,29 +1,23 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./Components/LayOut/Header";
 import Note from "./Components/Note";
+import AddNote from "./Components/AddNote";
+
+import axios from "axios";
+
 import "./App.css";
 
 class App extends Component {
   state = {
-    notes: [
-      // here comes data from my own API
-      {
-        id: 1,
-        title: "title1",
-        completed: false
-      },
-      {
-        id: 2,
-        title: "title2",
-        completed: false
-      },
-      {
-        id: 3,
-        title: "title3",
-        completed: false
-      }
-    ]
+    notes: []
+    // here comes data from my own API
   };
+  async componentDidMount() {
+    await axios
+      .get("http://localhost/phpfiles/becode-database-api/select.php")
+      .then(res => this.setState({ notes: res.data }));
+  }
   //toggle complete box
   markComplete = id => {
     this.setState({
@@ -38,21 +32,50 @@ class App extends Component {
   };
   //delNote
   delNote = id => {
-    this.setState({
-      notes: [...this.state.notes.filter(note => note.id !== id)]
-    });
+    axios
+      .delete(`http://localhost/phpfiles/becode-database-api/select.php/${id}`)
+      .then(res =>
+        this.setState({
+          notes: [...this.state.notes.filter(note => note.id !== id)]
+        })
+      );
   };
+
+  //add Note
+  addNote = title => {
+    axios
+      .post("http://localhost/phpfiles/becode-database-api/select.php", {
+        title,
+        completed: false
+      })
+      .then(res => this.setState({ notes: [...this.state.notes, res.data] }));
+  };
+
   render() {
     // console.log(this.state.notes);
     return (
-      <div className="App">
-        <Header />
-        <Note
-          notes={this.state.notes}
-          markComplete={this.markComplete}
-          delNote={this.delNote}
-        />
-      </div>
+      <Router>
+        <div className="App">
+          <div className="container">
+            <Header />
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <React.Fragment>
+                  <AddNote addNote={this.addNote} />
+                  <Note
+                    notes={this.state.notes}
+                    markComplete={this.markComplete}
+                    delNote={this.delNote}
+                  />
+                </React.Fragment>
+              )}
+            />
+            <Route path="/about" component={Note} />
+          </div>
+        </div>
+      </Router>
     );
   }
 }

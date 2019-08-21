@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 
 class Note extends Component {
   render() {
-    // console.log(this.props.notes);
+    console.log(this.props.notes);
     return this.props.notes.map(note => (
       <NoteItem
-        key={note.id}
+        key={note.ID}
         note={note}
         markComplete={this.props.markComplete}
         delNote={this.props.delNote}
