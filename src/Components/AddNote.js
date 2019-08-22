@@ -14,7 +14,7 @@ export class AddNote extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} style={{ display: "flex" }}>
+      <form action="POST" onSubmit={this.onSubmit} style={{ display: "flex" }}>
         <input
           style={{ flex: "10", padding: "5px" }}
           type="text"
