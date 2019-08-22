@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/krisderycke/note-app-front-end/static/css/main.344823cf.chunk.css",
+    "main.js": "/krisderycke/note-app-front-end/static/js/main.22e2dd68.chunk.js",
+    "main.js.map": "/krisderycke/note-app-front-end/static/js/main.22e2dd68.chunk.js.map",
+    "runtime~main.js": "/krisderycke/note-app-front-end/static/js/runtime~main.e47b74d4.js",
+    "runtime~main.js.map": "/krisderycke/note-app-front-end/static/js/runtime~main.e47b74d4.js.map",
+    "static/js/2.3b1382de.chunk.js": "/krisderycke/note-app-front-end/static/js/2.3b1382de.chunk.js",
+    "static/js/2.3b1382de.chunk.js.map": "/krisderycke/note-app-front-end/static/js/2.3b1382de.chunk.js.map",
+    "index.html": "/krisderycke/note-app-front-end/index.html",
+    "precache-manifest.c099f206fc4a00968e558c43a832bbfe.js": "/krisderycke/note-app-front-end/precache-manifest.c099f206fc4a00968e558c43a832bbfe.js",
+    "service-worker.js": "/krisderycke/note-app-front-end/service-worker.js",
+    "static/css/main.344823cf.chunk.css.map": "/krisderycke/note-app-front-end/static/css/main.344823cf.chunk.css.map"
+  }
+}
