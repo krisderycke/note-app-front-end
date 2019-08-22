@@ -33,7 +33,7 @@ class App extends Component {
   //delNote
   delNote = id => {
     axios
-      .delete(`http://localhost/phpfiles/becode-database-api/select.php/${id}`)
+      .delete(`http://localhost/phpfiles/becode-database-api/delete.php/${id}`)
       .then(res =>
         this.setState({
           notes: [...this.state.notes.filter(note => note.id !== id)]
@@ -44,7 +44,7 @@ class App extends Component {
   //add Note
   addNote = title => {
     axios
-      .post("http://localhost/phpfiles/becode-database-api/select.php", {
+      .post("http://localhost/phpfiles/becode-database-api/insert.php", {
         title,
         completed: false
       })
