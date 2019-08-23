@@ -72,7 +72,7 @@ class App extends Component {
                 </React.Fragment>
               )}
             />
-            <Route path="/about" component={Note} />
+            <Route path="/note-app-front-end" component={Note} />
           </div>
         </div>
       </Router>
